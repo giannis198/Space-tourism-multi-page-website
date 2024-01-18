@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --clr-dark: 230, 35%, 7%;
+    --clr-light: 231, 77%, 90%;
+    --clr-white: 0, 0%, 100%;
+    --clr-fadeWhite: 0, 0%, 100%, 25%;
+
+    --fs-900: 9.375rem; /* 150px */
+    --fs-800: 6.25rem; /* 100px */
+    --fs-700: 3.5rem; /* 56px */
+    --fs-600: 2rem; /* 36px */
+    --fs-500: 1.75rem; /* 28px */
+    --fs-400: 1.125rem; /* 18px */
+    --fs-300: 1rem;
+    --fs-200: 0.875rem; /* 14px */
+
+    --ff-serif: "Bellefair", serif;
+    --ff-sans-cond: "Barlow Condensed", sans-serif;
+    --ff-sans-normal: "Barlow", sans-serif;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-Dark font-sans text-White;
+  }
+}
+
+.ff-serif {
+  font-family: var(--ff-serif);
+}
+.ff-sans-cond {
+  font-family: var(--ff-sans-cond);
+}
+.ff-sans-normal {
+  font-family: var(--ff-sans-normal);
+}
+
+.letter-spacing-0 {
+  letter-spacing: 0px;
+}
+.letter-spacing-1 {
+  letter-spacing: 4.75px;
+}
+.letter-spacing-2 {
+  letter-spacing: 2.7px;
+}
+.letter-spacing-3 {
+  letter-spacing: 2.35px;
+}
+
+.large-button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: hsl(var(--clr-fadeWhite));
+  opacity: 0;
+  border-radius: inherit;
+  transition:
+    opacity 500ms linear,
+    transform 750ms ease-in-out;
+}
+
+.large-button:hover::after,
+.large-button:focus::after {
+  opacity: 1;
+  transform: scale(1.5);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.link {
+  position: relative;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  background-color: hsl(var(--clr-White));
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -0.5rem;
+  transition:
+    opacity 500ms linear,
+    transform 750ms ease-in-out;
+  opacity: 0;
+}
+
+.link:hover::after,
+.link:focus::after {
+  background-color: hsl(var(--clr-fadeWhite));
+  width: 100%;
+  opacity: 1;
+}
+
+.sr-only {
+  @apply absolute -m-[1px] hidden h-[1px] w-[1px] overflow-hidden whitespace-nowrap border-none p-0;
+}
+
+.background-home-image {
+  @apply bg-[url('/home/background-home-mobile.jpg')] bg-no-repeat md:bg-[url('/home/background-home-tablet.jpg')] lg:bg-[url('/home/background-home-desktop.jpg')];
+}
+
+.background-destination-image {
+  @apply bg-[url('/destination/background-destination-mobile.jpg')] bg-cover bg-center bg-no-repeat md:bg-[url('/destination/background-destination-tablet.jpg')] lg:bg-[url('/destination/background-destination-desktop.jpg')];
+}
+.background-crew-image {
+  @apply bg-[url('/crew/background-crew-mobile.jpg')] bg-cover bg-center bg-no-repeat md:bg-[url('/crew/background-crew-tablet.jpg')] lg:bg-[url('/crew/background-crew-desktop.jpg')];
+}
+
+.background-technology-image {
+  @apply bg-[url('/technology/background-technology-mobile.jpg')] bg-cover bg-center bg-no-repeat md:bg-[url('/technology/background-technology-tablet.jpg')] lg:bg-[url('/technology/background-technology-desktop.jpg')];
+}
