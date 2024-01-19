@@ -17,7 +17,7 @@ const NavLinks = () => {
             href={navLink.url}
           >
             <div className="flex gap-x-2">
-              <p>{navLink.id}</p>
+              <p className="text-fadeWhite">{navLink.id}</p>
               <p>{navLink.title}</p>
             </div>
           </Link>

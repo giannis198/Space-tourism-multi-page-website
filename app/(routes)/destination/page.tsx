@@ -1,5 +1,3 @@
-"use client";
-
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import React from "react";
@@ -10,6 +8,7 @@ import mars from "/public/destination/image-mars.png";
 import europa from "/public/destination/image-europa.png";
 import titan from "/public/destination/image-titan.png";
 import { Separator } from "@/components/ui/separator";
+import SectionHeader from "@/components/SectionHeader";
 
 const DestinationPage = () => {
   const constants = [
@@ -54,11 +53,8 @@ const DestinationPage = () => {
     <>
       <Container>
         <Section>
-          <div className="font-condensed letter-spacing-1 mb-10 flex justify-center gap-x-5 uppercase text-White">
-            <p className="bold text-fadeWhite ">01</p>
-            <p>Pick your destination</p>
-          </div>
-
+          <SectionHeader id="01" title="Pick your destination" />
+         
           <div className="relative grid justify-center pb-20">
             <Tabs defaultValue="moon" className="space-y-5">
               {constants.map((planet) => (
