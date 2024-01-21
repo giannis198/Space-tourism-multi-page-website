@@ -52,16 +52,15 @@ const DestinationPage = () => {
   return (
     <>
       <Container>
-        <Section>
+        <Section image="background-destination-image">
           <SectionHeader id="01" title="Pick your destination" />
-         
           <div className="relative grid justify-center pb-20">
-            <Tabs defaultValue="moon" className="space-y-5">
+            <Tabs defaultValue="moon" className="relative space-y-5">
               {constants.map((planet) => (
                 <TabsContent
                   key={planet.id}
                   value={planet.title}
-                  className="m-0 grid justify-center  "
+                  className=" m-0 grid justify-center "
                 >
                   <Image
                     height={225}
@@ -71,12 +70,12 @@ const DestinationPage = () => {
                   />
                 </TabsContent>
               ))}
-              <TabsList className="bg-transparent">
+              <TabsList className="gap-x-5 bg-transparent p-0">
                 {constants.map((planet) => (
                   <TabsTrigger
                     key={planet.id}
                     value={planet.title}
-                    className="font-condensed letter-spacing-2 link text-[14px] uppercase text-White transition-all"
+                    className="letter-spacing-2 rounded-none bg-transparent p-0 font-condensed text-sm uppercase text-White hover:border-b-2 hover:border-b-fadeBlack data-[state=active]:border-b-2 data-[state=active]:bg-transparent data-[state=active]:text-White "
                   >
                     {planet.title}
                   </TabsTrigger>
@@ -107,7 +106,7 @@ const DestinationPage = () => {
                   className="m-0 grid justify-center text-center"
                 >
                   <div className="space-y-1 pb-8">
-                    <h3 className="font-condensed letter-spacing-2 text-sm text-Accent">
+                    <h3 className="letter-spacing-2 font-condensed text-sm text-Accent">
                       AVG. DISTANCE
                     </h3>
                     <p className="font-bellefair text-2xl uppercase">
@@ -116,7 +115,7 @@ const DestinationPage = () => {
                   </div>
 
                   <div className="space-y-1">
-                    <h3 className="font-condensed letter-spacing-2 text-sm text-Accent">
+                    <h3 className="letter-spacing-2 font-condensed text-sm text-Accent">
                       Est. travel time
                     </h3>
                     <p className="font-bellefair text-2xl uppercase">
@@ -126,23 +125,6 @@ const DestinationPage = () => {
                 </TabsContent>
               ))}
             </Tabs>
-
-            {/* <Tabs defaultValue="moon">
-              <TabsContent value="moon" className="grid justify-center">
-                <Image height={225} width={225} src={moon} alt="moon" />
-              </TabsContent>
-              <TabsContent value="mars">mars</TabsContent>
-              <TabsContent value="europa">europa</TabsContent>
-              <TabsContent value="titan">titan</TabsContent>
-              <TabsList>
-                <TabsTrigger value="moon" className="bg-none">
-                  MOON
-                </TabsTrigger>
-                <TabsTrigger value="mars">MARS</TabsTrigger>
-                <TabsTrigger value="europa">EUROPA</TabsTrigger>
-                <TabsTrigger value="titan">TITAN</TabsTrigger>
-              </TabsList>
-            </Tabs> */}
           </div>
         </Section>
       </Container>

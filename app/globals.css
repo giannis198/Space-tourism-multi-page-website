@@ -37,7 +37,8 @@
     --clr-dark: 230, 35%, 7%;
     --clr-light: 231, 77%, 90%;
     --clr-white: 0, 0%, 100%;
-    --clr-fadeWhite: 0, 0%, 100%, 25%;
+    --clr-fadeWhite: 0, 0%, 100%, 17%;
+    --clr-fadeBlack: 0, 0%, 100%, 50%;
 
     --fs-900: 9.375rem; /* 150px */
     --fs-800: 6.25rem; /* 100px */
@@ -89,7 +90,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-Dark font-sans text-White;
+    @apply overflow-y-hidden scroll-smooth bg-Dark font-sans text-White;
   }
 }
 
@@ -116,26 +117,6 @@
   letter-spacing: 2.35px;
 }
 
-.large-button::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background: hsl(var(--clr-fadeWhite));
-  opacity: 0;
-  border-radius: inherit;
-  transition:
-    opacity 500ms linear,
-    transform 750ms ease-in-out;
-}
-
-.large-button:hover::after,
-.large-button:focus::after {
-  opacity: 1;
-  transform: scale(1.5);
-}
-
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -144,42 +125,18 @@
   color: hsl(228, 45%, 44%);
 }
 
-.link {
-  position: relative;
-}
-
-.link::after {
-  content: "";
-  position: absolute;
-  background-color: hsl(var(--clr-White));
-  height: 3px;
-  width: 0;
-  left: 0;
-  bottom: -0.5rem;
-  transition:
-    opacity 500ms linear,
-    transform 750ms ease-in-out;
-  opacity: 0;
-}
-
-.link:hover::after,
-.link:focus::after {
-  background-color: hsl(var(--clr-fadeWhite));
-  width: 100%;
-  opacity: 1;
-}
-
 .sr-only {
   @apply absolute -m-[1px] hidden h-[1px] w-[1px] overflow-hidden whitespace-nowrap border-none p-0;
 }
 
 .background-home-image {
-  @apply bg-[url('/home/background-home-mobile.jpg')] bg-no-repeat md:bg-[url('/home/background-home-tablet.jpg')] lg:bg-[url('/home/background-home-desktop.jpg')];
+  @apply bg-[url('/home/background-home-mobile.jpg')] bg-cover bg-center bg-no-repeat md:bg-[url('/home/background-home-tablet.jpg')] lg:bg-[url('/home/background-home-desktop.jpg')];
 }
 
 .background-destination-image {
-  @apply bg-[url('/destination/background-destination-mobile.jpg')] bg-cover bg-center bg-no-repeat md:bg-[url('/destination/background-destination-tablet.jpg')] lg:bg-[url('/destination/background-destination-desktop.jpg')];
+  @apply bg-[url('/destination/background-destination-mobile.jpg')] bg-cover bg-center  bg-no-repeat md:bg-[url('/destination/background-destination-tablet.jpg')] lg:bg-[url('/destination/background-destination-desktop.jpg')];
 }
+
 .background-crew-image {
   @apply bg-[url('/crew/background-crew-mobile.jpg')] bg-cover bg-center bg-no-repeat md:bg-[url('/crew/background-crew-tablet.jpg')] lg:bg-[url('/crew/background-crew-desktop.jpg')];
 }

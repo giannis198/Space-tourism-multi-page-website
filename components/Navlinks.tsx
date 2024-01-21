@@ -1,4 +1,4 @@
-import Link from "next/link";
+import NavLinkItem from "./NavLinkItem";
 
 const NavLinks = () => {
   const navLinks = [
@@ -8,19 +8,14 @@ const NavLinks = () => {
     { id: "03", url: "technology", title: "technology" },
   ];
   return (
-    <ul className="grid gap-5 pt-20 text-xl text-white md:grid-flow-col md:gap-x-16 md:pt-0">
+    <ul className="grid gap-y-5 text-xl text-White md:grid-flow-col md:gap-x-16 md:pt-0">
       {navLinks.map((navLink) => (
-        <li className="link" key={navLink.id}>
-          <Link
-            key={navLink.id}
-            className="relative uppercase"
+        <li key={navLink.id}>
+          <NavLinkItem
+            id={navLink.id}
+            label={navLink.title}
             href={navLink.url}
-          >
-            <div className="flex gap-x-2">
-              <p className="text-fadeWhite">{navLink.id}</p>
-              <p>{navLink.title}</p>
-            </div>
-          </Link>
+          />
         </li>
       ))}
     </ul>

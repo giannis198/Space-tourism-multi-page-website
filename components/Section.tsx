@@ -1,10 +1,13 @@
+import { cn } from "@/lib/utils";
+
 interface SectionProps {
   children: React.ReactNode;
+  image: string;
 }
 
-const Section = ({ children }: SectionProps) => {
+const Section = ({ children, image }: SectionProps) => {
   return (
-    <section className="background-destination-image h-[100svh] px-4 py-28 text-center">
+    <section className={cn("h-[100svh] px-4 py-28 text-center", image)}>
       {children}
     </section>
   );

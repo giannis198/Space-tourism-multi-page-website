@@ -44,6 +44,7 @@ const config = {
         Accent: "hsl(var(--clr-light))",
         White: "hsl(var(--clr-white))",
         fadeWhite: "hsl(var(--clr-fadeWhite))",
+        fadeBlack: "hsl(var(--clr-fadeBlack))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

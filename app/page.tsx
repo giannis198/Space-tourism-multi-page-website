@@ -1,16 +1,14 @@
-import ButtonLarge from "@/components/ButtonLarge";
 import Container from "@/components/Container";
 import Section from "@/components/Section";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const HomePage = () => {
   return (
     <>
       <Container>
-        <Section>
+        <Section image="background-home-image">
           <div className="mb-20">
-            <h1 className="letter-spacing-2 font-condensed text-center text-base text-Accent">
+            <h1 className="letter-spacing-2 text-center font-condensed text-base text-Accent">
               SO, YOU WANT TO TRAVEL TO <br />
               <span className="letter-spacing-0 font-bellefair text-[80px] text-White">
                 SPACE
@@ -24,10 +22,10 @@ const HomePage = () => {
             </p>
           </div>
 
-          <div className="z-10 grid items-center justify-center">
+          <div className="grid justify-center p-10 ">
             <Link
               href="/destination"
-              className="large-button relative grid h-40 w-40 items-center rounded-full bg-White text-center text-xl uppercase text-Dark"
+              className="grid h-[9.375rem] w-[9.375rem] items-center rounded-full bg-White text-center text-xl uppercase text-Dark outline transition-all hover:outline-[3rem] hover:outline-fadeWhite"
             >
               explore
             </Link>

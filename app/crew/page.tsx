@@ -1,4 +1,9 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabsNew";
 import Image from "next/image";
 
 import Container from "@/components/Container";
@@ -10,6 +15,7 @@ import victorImg from "/public/crew/image-victor-glover.png";
 import ansariImg from "/public/crew/image-anousheh-ansari.png";
 import IconDot from "@/components/IconDot";
 import SectionHeader from "@/components/SectionHeader";
+import CrewTabs from "@/components/CrewTabs";
 
 const crew = [
   {
@@ -43,55 +49,10 @@ const CrewPage = () => {
   return (
     <>
       <Container>
-        <Section>
+        <Section image="background-crew-image">
           <SectionHeader title="Meet your crew" id="02" />
           <div className="relative grid justify-center pb-20">
-            <Tabs defaultValue={crew[0].name}>
-              {crew.map((member, index) => (
-                <TabsContent
-                  key={index}
-                  value={member.name}
-                  className="m-0 grid justify-center"
-                >
-                  <div className="relative h-[300px] w-[259px]">
-                    <Image
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-contain"
-                      src={member.image}
-                      alt={member.name}
-                    />
-                  </div>
-                </TabsContent>
-              ))}
-              <Separator className="opacity-50" />
-              <TabsList className="my-4 bg-transparent">
-                {crew.map((member, index) => (
-                  <TabsTrigger key={index} value={member.name}>
-                    <IconDot />
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-
-              {crew.map((member, index) => (
-                <TabsContent
-                  key={index}
-                  value={member.name}
-                  className="m-0 grid justify-center space-y-1 text-center"
-                >
-                  <h3 className="font-bellefair text-base uppercase text-White opacity-50">
-                    {member.role}
-                  </h3>
-                  <h1 className="font-bellefair text-2xl uppercase">
-                    {member.name}
-                  </h1>
-
-                  <p className="font-barlow text-sm leading-loose text-Accent ">
-                    {member.bio}
-                  </p>
-                </TabsContent>
-              ))}
-            </Tabs>
+            <CrewTabs crew={crew} />
           </div>
         </Section>
       </Container>

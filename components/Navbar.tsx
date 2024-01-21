@@ -10,13 +10,13 @@ const Navbar = () => {
   return (
     <nav className="fixed my-4 w-full px-4">
       <Container>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between ">
           <Link href="/">
             <Image src={logo} alt="logo" />
           </Link>
           <MobileMenu />
 
-          <div className="hidden lg:block">
+          <div className="hidden lg:block ">
             <NavLinks />
           </div>
         </div>
