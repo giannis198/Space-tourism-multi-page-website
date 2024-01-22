@@ -79,7 +79,7 @@ const TechnologyPage = () => {
                 <TabsContent
                   key={index}
                   value={technology.name}
-                  className="m-0 mx-auto grid w-2/3 justify-center gap-y-3 text-center"
+                  className="m-0 mx-auto grid justify-center gap-y-3 text-center md:w-2/3"
                 >
                   <p className="letter-spacing-3 font-condensed text-sm text-Accent md:text-base">
                     THE TERMINOLOGY…
