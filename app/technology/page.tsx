@@ -41,7 +41,10 @@ const TechnologyPage = () => {
         <Section image="background-technology-image">
           <SectionHeader title="SPACE LAUNCH 101" id="03" />
           <div className="grid justify-center pb-20">
-            <Tabs defaultValue={technologies[0].name} className="relative">
+            <Tabs
+              defaultValue={technologies[0].name}
+              className="relative space-y-10"
+            >
               {technologies.map((technology, index) => (
                 <TabsContent
                   key={index}
@@ -65,27 +68,27 @@ const TechnologyPage = () => {
                   <TabsTrigger
                     key={index}
                     value={tecnology.name}
-                    className="h-10 w-10 rounded-full text-White ring-White transition-all hover:ring-1"
+                    className="h-10 w-10 rounded-full text-White ring-White transition-all hover:ring-1 md:h-[3.75rem] md:w-[3.75rem] md:text-[1.5rem]"
                   >
                     {index + 1}
                   </TabsTrigger>
                 ))}
               </TabsList>
-              <p className="letter-spacing-3 font-condensed text-sm text-Accent">
-                THE TERMINOLOGY…
-              </p>
 
               {technologies.map((technology, index) => (
                 <TabsContent
                   key={index}
                   value={technology.name}
-                  className="m-0 grid justify-center text-center"
+                  className="m-0 mx-auto grid w-2/3 justify-center gap-y-3 text-center"
                 >
-                  <h1 className="font-bellefair text-2xl uppercase">
+                  <p className="letter-spacing-3 font-condensed text-sm text-Accent md:text-base">
+                    THE TERMINOLOGY…
+                  </p>
+                  <h1 className="font-bellefair text-2xl uppercase md:text-[2.5rem]">
                     {technology.name}
                   </h1>
 
-                  <p className="px-4 font-barlow text-sm leading-loose text-Accent ">
+                  <p className="px-4 font-barlow text-sm leading-loose text-Accent md:text-base ">
                     {technology.description}
                   </p>
                 </TabsContent>

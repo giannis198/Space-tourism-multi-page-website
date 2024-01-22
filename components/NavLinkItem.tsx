@@ -27,8 +27,8 @@ const NavLinkItem = ({ href, label, id }: NavLinkItemProps) => {
             isActive && "border-b-2",
           )}
         >
-          <p className="text-fadeBlack">{id}</p>
-          <p>{label}</p>
+          <p className="text-fadeBlack md:hidden">{id}</p>
+          <p className="letter-spacing-3 font-condensed md:text-sm">{label}</p>
         </div>
       </Link>
     </>

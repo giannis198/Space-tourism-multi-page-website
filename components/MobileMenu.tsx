@@ -9,7 +9,7 @@ const MobileMenu = () => {
       <Sheet>
         <SheetTrigger asChild>
           <Image
-            className="cursor-pointer lg:hidden"
+            className="cursor-pointer md:hidden"
             src={HamburgerMenuIcon}
             alt="hamburger menu"
           />

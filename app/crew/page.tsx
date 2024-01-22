@@ -1,21 +1,13 @@
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/tabsNew";
-import Image from "next/image";
-
 import Container from "@/components/Container";
 import Section from "@/components/Section";
-import { Separator } from "@/components/ui/separator";
 import hurleyImg from "/public/crew/image-douglas-hurley.png";
 import markImg from "/public/crew/image-mark-shuttleworth.png";
 import victorImg from "/public/crew/image-victor-glover.png";
 import ansariImg from "/public/crew/image-anousheh-ansari.png";
-import IconDot from "@/components/IconDot";
+
 import SectionHeader from "@/components/SectionHeader";
 import CrewTabs from "@/components/CrewTabs";
+import CrewTabsTablet from "@/components/CrewTabsTablet";
 
 const crew = [
   {
@@ -52,7 +44,12 @@ const CrewPage = () => {
         <Section image="background-crew-image">
           <SectionHeader title="Meet your crew" id="02" />
           <div className="relative grid justify-center pb-20">
-            <CrewTabs crew={crew} />
+            <div className="md:hidden">
+              <CrewTabs crew={crew} />
+            </div>
+            <div className="hidden md:block">
+              <CrewTabsTablet crew={crew} />
+            </div>
           </div>
         </Section>
       </Container>

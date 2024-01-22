@@ -5,6 +5,7 @@ import MobileMenu from "./MobileMenu";
 import NavLinks from "./Navlinks";
 import logo from "../public/shared/logo.svg";
 import Container from "./Container";
+import { Separator } from "./ui/separator";
 
 const Navbar = () => {
   return (
@@ -16,7 +17,9 @@ const Navbar = () => {
           </Link>
           <MobileMenu />
 
-          <div className="hidden lg:block ">
+          <Separator className="left-20 hidden w-[20rem] lg:absolute" />
+
+          <div className="hidden bg-fadeWhite md:block ">
             <NavLinks />
           </div>
         </div>

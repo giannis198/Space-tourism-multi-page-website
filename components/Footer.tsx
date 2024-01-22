@@ -6,7 +6,7 @@ import Container from "./Container";
 const Footer = () => {
   return (
     <Container>
-      <section className="fixed bottom-0 left-1/2 -translate-x-1/2 text-white ">
+      <section className="fixed bottom-0 left-1/2 my-2 -translate-x-1/2 text-white ">
         <div className="attribution decoration-none mx-4">
           Challenge by&nbsp;
           <Link href="https://www.frontendmentor.io?ref=challenge">

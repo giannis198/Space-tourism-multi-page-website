@@ -60,11 +60,10 @@ const DestinationPage = () => {
                 <TabsContent
                   key={planet.id}
                   value={planet.title}
-                  className=" m-0 grid justify-center "
+                  className="m-0 grid justify-center "
                 >
                   <Image
-                    height={225}
-                    width={225}
+                    className="h-[10.6rem] w-[10.6rem] md:h-[18.75rem] md:w-[18.75rem] "
                     src={planet.imgUrl}
                     alt={planet.title}
                   />
@@ -86,18 +85,20 @@ const DestinationPage = () => {
                 <TabsContent
                   key={planet.id}
                   value={planet.title}
-                  className="m-0 grid justify-center text-center"
+                  className="m-0 grid justify-center gap-y-12 text-center md:w-[35.8rem] "
                 >
-                  <h1 className="font-bellefair text-4xl uppercase">
-                    {planet.title}
-                  </h1>
-                  <p className="text-sm leading-loose text-Accent ">
-                    {planet.description}
-                  </p>
+                  <div>
+                    <h1 className="font-bellefair text-4xl uppercase md:text-[5rem]">
+                      {planet.title}
+                    </h1>
+                    <p className="text-sm leading-loose text-Accent ">
+                      {planet.description}
+                    </p>
+                  </div>
+
+                  <Separator className="bg-Accent opacity-50" />
                 </TabsContent>
               ))}
-
-              <Separator className="bg-Accent opacity-50" />
 
               {constants.map((planet) => (
                 <TabsContent
@@ -105,22 +106,24 @@ const DestinationPage = () => {
                   value={planet.title}
                   className="m-0 grid justify-center text-center"
                 >
-                  <div className="space-y-1 pb-8">
-                    <h3 className="letter-spacing-2 font-condensed text-sm text-Accent">
-                      AVG. DISTANCE
-                    </h3>
-                    <p className="font-bellefair text-2xl uppercase">
-                      {planet.distance}
-                    </p>
-                  </div>
+                  <div className="justify-between gap-x-14 md:flex">
+                    <div className="space-y-1 pb-8">
+                      <h3 className="letter-spacing-2 font-condensed text-sm text-Accent">
+                        AVG. DISTANCE
+                      </h3>
+                      <p className="font-bellefair text-2xl uppercase">
+                        {planet.distance}
+                      </p>
+                    </div>
 
-                  <div className="space-y-1">
-                    <h3 className="letter-spacing-2 font-condensed text-sm text-Accent">
-                      Est. travel time
-                    </h3>
-                    <p className="font-bellefair text-2xl uppercase">
-                      {planet.travel}
-                    </p>
+                    <div className="space-y-1">
+                      <h3 className="letter-spacing-2 font-condensed text-sm text-Accent">
+                        Est. travel time
+                      </h3>
+                      <p className="font-bellefair text-2xl uppercase">
+                        {planet.travel}
+                      </p>
+                    </div>
                   </div>
                 </TabsContent>
               ))}
