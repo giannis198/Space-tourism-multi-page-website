@@ -8,7 +8,7 @@ const NavLinks = () => {
     { id: "03", url: "technology", title: "technology" },
   ];
   return (
-    <ul className="grid gap-y-5 text-xl text-White md:grid-flow-col md:gap-x-6 md:px-5">
+    <ul className="grid gap-y-5 pt-10 text-White md:grid-flow-col md:gap-x-6 md:pl-5 md:pt-0  lg:justify-between lg:gap-x-8 lg:px-56 lg:text-xl">
       {navLinks.map((navLink) => (
         <li key={navLink.id}>
           <NavLinkItem

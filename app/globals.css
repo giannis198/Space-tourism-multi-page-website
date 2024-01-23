@@ -39,6 +39,7 @@
     --clr-white: 0, 0%, 100%;
     --clr-fadeWhite: 0, 0%, 100%, 17%;
     --clr-fadeBlack: 0, 0%, 100%, 50%;
+    --clr-navBar: 0, 0%, 100%, 4%;
 
     --fs-900: 9.375rem; /* 150px */
     --fs-800: 6.25rem; /* 100px */

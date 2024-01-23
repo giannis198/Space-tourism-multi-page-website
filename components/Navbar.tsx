@@ -9,17 +9,17 @@ import { Separator } from "./ui/separator";
 
 const Navbar = () => {
   return (
-    <nav className="fixed my-4 w-full px-4">
+    <nav className="fixed w-full overflow-hidden px-4 py-4 lg:py-8">
       <Container>
-        <div className="flex items-center justify-between ">
+        <div className="flex items-center justify-between lg:relative">
           <Link href="/">
             <Image src={logo} alt="logo" />
           </Link>
           <MobileMenu />
 
-          <Separator className="left-20 hidden w-[20rem] lg:absolute" />
+          <Separator className="left-20 z-10 hidden w-[29.5rem] opacity-30 lg:absolute lg:block" />
 
-          <div className="hidden bg-fadeWhite md:block ">
+          <div className="lg: hidden bg-navBarBg backdrop-blur-2xl md:block">
             <NavLinks />
           </div>
         </div>

@@ -54,79 +54,86 @@ const DestinationPage = () => {
       <Container>
         <Section image="background-destination-image">
           <SectionHeader id="01" title="Pick your destination" />
-          <div className="relative grid justify-center pb-20">
-            <Tabs defaultValue="moon" className="relative space-y-5">
-              {constants.map((planet) => (
-                <TabsContent
-                  key={planet.id}
-                  value={planet.title}
-                  className="m-0 grid justify-center "
-                >
-                  <Image
-                    className="h-[10.6rem] w-[10.6rem] md:h-[18.75rem] md:w-[18.75rem] "
-                    src={planet.imgUrl}
-                    alt={planet.title}
-                  />
-                </TabsContent>
-              ))}
-              <TabsList className="gap-x-5 bg-transparent p-0">
+          <div className="relative grid items-center justify-center pb-12">
+            <Tabs
+              defaultValue="moon"
+              className="relative items-center justify-between gap-x-32 space-y-5 lg:flex lg:pt-10 lg:text-start "
+            >
+              <div>
                 {constants.map((planet) => (
-                  <TabsTrigger
+                  <TabsContent
                     key={planet.id}
                     value={planet.title}
-                    className="letter-spacing-2 rounded-none bg-transparent p-0 font-condensed text-sm uppercase text-White hover:border-b-2 hover:border-b-fadeBlack data-[state=active]:border-b-2 data-[state=active]:bg-transparent data-[state=active]:text-White "
+                    className="m-0 grid justify-center "
                   >
-                    {planet.title}
-                  </TabsTrigger>
+                    <Image
+                      className="h-[10.6rem] w-[10.6rem] md:h-[18.75rem] md:w-[18.75rem] lg:h-[27.8rem] lg:w-[27.8rem] "
+                      src={planet.imgUrl}
+                      alt={planet.title}
+                    />
+                  </TabsContent>
                 ))}
-              </TabsList>
+              </div>
 
-              {constants.map((planet) => (
-                <TabsContent
-                  key={planet.id}
-                  value={planet.title}
-                  className="m-0 grid justify-center gap-y-12 text-center md:w-[35.8rem] "
-                >
-                  <div>
-                    <h1 className="font-bellefair text-4xl uppercase md:text-[5rem]">
+              <div>
+                <TabsList className="gap-x-5 bg-transparent p-0">
+                  {constants.map((planet) => (
+                    <TabsTrigger
+                      key={planet.id}
+                      value={planet.title}
+                      className="letter-spacing-2 rounded-none bg-transparent p-0 font-condensed text-sm uppercase text-White hover:border-b-2 hover:border-b-fadeBlack data-[state=active]:border-b-2 data-[state=active]:bg-transparent data-[state=active]:text-White lg:text-base"
+                    >
                       {planet.title}
-                    </h1>
-                    <p className="text-sm leading-loose text-Accent ">
-                      {planet.description}
-                    </p>
-                  </div>
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
 
-                  <Separator className="bg-Accent opacity-50" />
-                </TabsContent>
-              ))}
-
-              {constants.map((planet) => (
-                <TabsContent
-                  key={planet.id}
-                  value={planet.title}
-                  className="m-0 grid justify-center text-center"
-                >
-                  <div className="justify-between gap-x-14 md:flex">
-                    <div className="space-y-1 pb-8">
-                      <h3 className="letter-spacing-2 font-condensed text-sm text-Accent">
-                        AVG. DISTANCE
-                      </h3>
-                      <p className="font-bellefair text-2xl uppercase">
-                        {planet.distance}
+                {constants.map((planet) => (
+                  <TabsContent
+                    key={planet.id}
+                    value={planet.title}
+                    className="m-0 mx-auto grid w-3/4 justify-center gap-y-8 text-center md:w-[35.8rem]  lg:text-start"
+                  >
+                    <div className="mb-4 space-y-2 md:space-y-4  lg:w-2/3">
+                      <h1 className="font-bellefair text-4xl uppercase md:text-[5rem] lg:text-5xl">
+                        {planet.title}
+                      </h1>
+                      <p className="text-sm leading-loose text-Accent lg:text-xl">
+                        {planet.description}
                       </p>
+                      <Separator className=" bg-Accent opacity-50 lg:mb-8" />
                     </div>
+                  </TabsContent>
+                ))}
 
-                    <div className="space-y-1">
-                      <h3 className="letter-spacing-2 font-condensed text-sm text-Accent">
-                        Est. travel time
-                      </h3>
-                      <p className="font-bellefair text-2xl uppercase">
-                        {planet.travel}
-                      </p>
+                {constants.map((planet) => (
+                  <TabsContent
+                    key={planet.id}
+                    value={planet.title}
+                    className="m-0 grid justify-center text-center lg:justify-start lg:text-start"
+                  >
+                    <div className="justify-between gap-x-14 md:flex">
+                      <div className="space-y-1 pb-8">
+                        <h3 className="letter-spacing-2 font-condensed text-sm text-Accent">
+                          AVG. DISTANCE
+                        </h3>
+                        <p className="font-bellefair text-2xl uppercase">
+                          {planet.distance}
+                        </p>
+                      </div>
+
+                      <div className="space-y-1">
+                        <h3 className="letter-spacing-2 font-condensed text-sm text-Accent">
+                          Est. travel time
+                        </h3>
+                        <p className="font-bellefair text-2xl uppercase">
+                          {planet.travel}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </TabsContent>
-              ))}
+                  </TabsContent>
+                ))}
+              </div>
             </Tabs>
           </div>
         </Section>

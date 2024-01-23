@@ -23,12 +23,16 @@ const NavLinkItem = ({ href, label, id }: NavLinkItemProps) => {
       <Link className="uppercase" href={href}>
         <div
           className={cn(
-            "flex gap-x-2 py-4 hover:border-b-2 hover:border-b-fadeBlack",
-            isActive && "border-b-2",
+            "flex gap-x-2 py-2 hover:border-b-2 hover:border-b-fadeBlack lg:items-center lg:py-9",
+            isActive && "md:border-b-2",
           )}
         >
-          <p className="text-fadeBlack md:hidden">{id}</p>
-          <p className="letter-spacing-3 font-condensed md:text-sm">{label}</p>
+          <p className="text-center font-semibold text-fadeBlack md:hidden lg:block lg:text-base">
+            {id}
+          </p>
+          <p className="letter-spacing-3 font-condensed md:text-sm lg:text-base">
+            {label}
+          </p>
         </div>
       </Link>
     </>

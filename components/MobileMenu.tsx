@@ -14,7 +14,7 @@ const MobileMenu = () => {
             alt="hamburger menu"
           />
         </SheetTrigger>
-        <SheetContent side="right" className="bg-Dark backdrop-blur-sm">
+        <SheetContent side="right" className="bg-navBarBg backdrop-blur-2xl">
           <NavLinks />
         </SheetContent>
       </Sheet>

@@ -45,6 +45,7 @@ const config = {
         White: "hsl(var(--clr-white))",
         fadeWhite: "hsl(var(--clr-fadeWhite))",
         fadeBlack: "hsl(var(--clr-fadeBlack))",
+        navBarBg: "hsl(var(--clr-navBar))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

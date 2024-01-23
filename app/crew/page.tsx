@@ -3,7 +3,7 @@ import Section from "@/components/Section";
 import hurleyImg from "/public/crew/image-douglas-hurley.png";
 import markImg from "/public/crew/image-mark-shuttleworth.png";
 import victorImg from "/public/crew/image-victor-glover.png";
-import ansariImg from "/public/crew/image-anousheh-ansari.png";
+import ansariImg from "/public/crew/image-anousheh-ansari.webp";
 
 import SectionHeader from "@/components/SectionHeader";
 import CrewTabs from "@/components/CrewTabs";
@@ -43,7 +43,7 @@ const CrewPage = () => {
       <Container>
         <Section image="background-crew-image">
           <SectionHeader title="Meet your crew" id="02" />
-          <div className="relative grid justify-center pb-20">
+          <div className="relative grid justify-center pb-16 lg:pb-0">
             <div className="md:hidden">
               <CrewTabs crew={crew} />
             </div>

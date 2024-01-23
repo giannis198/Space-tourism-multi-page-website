@@ -38,61 +38,76 @@ const TechnologyPage = () => {
   return (
     <>
       <Container>
-        <Section image="background-technology-image">
+        <Section image="background-technology-image lg:px-0 lg:pl-20">
           <SectionHeader title="SPACE LAUNCH 101" id="03" />
-          <div className="grid justify-center pb-20">
+          <div className="relative grid items-center justify-center pb-20">
             <Tabs
               defaultValue={technologies[0].name}
-              className="relative space-y-10"
+              className="relative items-center justify-center space-y-6 lg:grid lg:grid-cols-[auto_2fr_auto]"
             >
-              {technologies.map((technology, index) => (
-                <TabsContent
-                  key={index}
-                  value={technology.name}
-                  className=" m-0 grid justify-center"
-                >
-                  <div className="relative h-[30vh] w-[100vw]">
-                    <Image
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw"
-                      className="object-contain"
-                      src={technology.images.landscape}
-                      alt={technology.name}
-                    />
-                  </div>
-                </TabsContent>
-              ))}
-
-              <TabsList className="my-4 w-full space-x-3 bg-transparent">
-                {technologies.map((tecnology, index) => (
-                  <TabsTrigger
+              <div className="relative col-start-3 row-start-1">
+                {technologies.map((technology, index) => (
+                  <TabsContent
                     key={index}
-                    value={tecnology.name}
-                    className="h-10 w-10 rounded-full text-White ring-White transition-all hover:ring-1 md:h-[3.75rem] md:w-[3.75rem] md:text-[1.5rem]"
+                    value={technology.name}
+                    className=" m-0 grid justify-center"
                   >
-                    {index + 1}
-                  </TabsTrigger>
+                    <div className="relative h-[25vh] w-[100vw] lg:hidden ">
+                      <Image
+                        fill
+                        sizes="(min-width: 768px) 100vw, (min-width: 1440px) 50vw, 100vw"
+                        className="object-contain"
+                        src={technology.images.landscape}
+                        alt={technology.name}
+                      />
+                    </div>
+                    <div className="relative hidden lg:block lg:h-[32.9rem] lg:w-[32.18rem]">
+                      <Image
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1440px) 40vw, 33vw"
+                        className="object-contain"
+                        src={technology.images.portrait}
+                        alt={technology.name}
+                      />
+                    </div>
+                  </TabsContent>
                 ))}
-              </TabsList>
+              </div>
 
-              {technologies.map((technology, index) => (
-                <TabsContent
-                  key={index}
-                  value={technology.name}
-                  className="m-0 mx-auto grid justify-center gap-y-3 text-center md:w-2/3"
-                >
-                  <p className="letter-spacing-3 font-condensed text-sm text-Accent md:text-base">
-                    THE TERMINOLOGY…
-                  </p>
-                  <h1 className="font-bellefair text-2xl uppercase md:text-[2.5rem]">
-                    {technology.name}
-                  </h1>
+              <div className="col-start-1">
+                <TabsList className="my-4 w-full gap-y-4 space-x-3 bg-transparent lg:flex-col">
+                  {technologies.map((tecnology, index) => (
+                    <TabsTrigger
+                      key={index}
+                      value={tecnology.name}
+                      className="h-10 w-10 rounded-full text-White ring-White transition-all hover:ring-1 md:h-[3.75rem] md:w-[3.75rem] md:text-[1.5rem] lg:m-0 lg:h-20 lg:w-20 lg:py-4 lg:text-[2rem]"
+                    >
+                      {index + 1}
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+              </div>
 
-                  <p className="px-4 font-barlow text-sm leading-loose text-Accent md:text-base ">
-                    {technology.description}
-                  </p>
-                </TabsContent>
-              ))}
+              <div className="col-start-2">
+                {technologies.map((technology, index) => (
+                  <TabsContent
+                    key={index}
+                    value={technology.name}
+                    className="m-0 mx-auto grid justify-center gap-y-3 text-center md:w-2/3 md:gap-y-8 lg:ml-8 lg:w-4/5 lg:text-start"
+                  >
+                    <p className="letter-spacing-3 font-condensed text-sm text-Accent md:text-base lg:text-base">
+                      THE TERMINOLOGY…
+                    </p>
+                    <h1 className="font-bellefair text-2xl uppercase md:text-[2.5rem] lg:text-4xl">
+                      {technology.name}
+                    </h1>
+
+                    <p className=" font-barlow text-sm leading-loose text-Accent md:text-base lg:text-xl ">
+                      {technology.description}
+                    </p>
+                  </TabsContent>
+                ))}
+              </div>
             </Tabs>
           </div>
         </Section>

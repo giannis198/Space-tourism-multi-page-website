@@ -9,7 +9,7 @@ const Section = ({ children, image }: SectionProps) => {
   return (
     <section
       className={cn(
-        "h-[100svh] overflow-x-hidden px-4 pt-28 text-center",
+        "h-[100vh] overflow-x-hidden px-4 pt-20 text-center lg:px-20",
         image,
       )}
     >
